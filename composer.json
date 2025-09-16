@@ -1,0 +1,39 @@
+{
+  "name": "high-five/craft-base",
+  "description": "Utility functions and traits used by High Five Craft CMS plug-ins",
+  "version": "0.0.0",
+  "type": "library",
+  "keywords": ["craft", "cms", "craftcms", "craft-plugin"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Harm Putman",
+      "email": "harm@high-five.dev"
+    }
+  ],
+  "require": {
+    "php": "^8.4.0",
+    "craftcms/cms": "^5.0.0"
+  },
+  "require-dev": {
+    "craftcms/phpstan": "dev-main",
+    "symplify/easy-coding-standard": "^12.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "highfive\\base\\": "src/"
+    }
+  },
+  "scripts": {
+    "check-cs": "ecs",
+    "fix-cs": "ecs  --fix",
+    "phpstan": "phpstan --memory-limit=1G"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "craftcms/plugin-installer": true,
+      "yiisoft/yii2-composer": true
+    }
+  }
+}
