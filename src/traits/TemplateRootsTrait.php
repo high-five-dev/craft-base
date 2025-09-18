@@ -9,13 +9,13 @@ use const DIRECTORY_SEPARATOR;
 
 trait TemplateRootsTrait
 {
-    private function registerTemplateRoots(): void
+    private function registerTemplateRoots(string $folder = 'templates'): void
     {
         Event::on(
             View::class,
             View::EVENT_REGISTER_SITE_TEMPLATE_ROOTS,
-            function (RegisterTemplateRootsEvent $event) {
-                $dir = $this->getBasePath() . DIRECTORY_SEPARATOR . 'templates';
+            function (RegisterTemplateRootsEvent $event) use ($folder) {
+                $dir = $this->getBasePath() . DIRECTORY_SEPARATOR . $folder;
 
                 if (!is_dir($dir)) {
                     return;
